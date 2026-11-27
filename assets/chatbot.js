@@ -58,7 +58,7 @@
     const el = document.createElement("div");
     el.className = "gr-chat-message " + (who === "user" ? "gr-chat-user" : "gr-chat-bot");
     if (who === "bot") {
-      const pattern = /\\[([^\\]]+)\\]\\((https?:\\/\\/[^\\s)]+|\\/[^\\s)]*|mailto:[^\\s)]+)\\)/g;
+      const pattern = /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*|mailto:[^\s)]+)\)/g;
       let cursor = 0;
       let match;
       while ((match = pattern.exec(text)) !== null) {
