@@ -57,7 +57,26 @@
   function addMessage(text, who) {
     const el = document.createElement("div");
     el.className = "gr-chat-message " + (who === "user" ? "gr-chat-user" : "gr-chat-bot");
-    el.textContent = text;
+    if (who === "bot") {
+      const pattern = /\\[([^\\]]+)\\]\\((https?:\\/\\/[^\\s)]+|\\/[^\\s)]*|mailto:[^\\s)]+)\\)/g;
+      let cursor = 0;
+      let match;
+      while ((match = pattern.exec(text)) !== null) {
+        el.append(document.createTextNode(text.slice(cursor, match.index)));
+        const link = document.createElement("a");
+        link.textContent = match[1];
+        link.href = match[2];
+        if (/^https?:/.test(link.href)) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        }
+        el.append(link);
+        cursor = pattern.lastIndex;
+      }
+      el.append(document.createTextNode(text.slice(cursor)));
+    } else {
+      el.textContent = text;
+    }
     body.append(el);
     body.scrollTop = body.scrollHeight;
     return el;
