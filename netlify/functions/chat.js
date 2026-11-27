@@ -105,21 +105,16 @@ export default async (request) => {
     return json({ error: "Escribe una pregunta para continuar." }, 400);
   }
 
-  if (!process.env.OPENAI_BASE_URL || !process.env.OPENAI_API_KEY) {
+  if (!process.env.OPENAI_BASE_URL) {
     return json({
-      error: "El asistente está pendiente de activar la conexión de IA en Netlify. Puedes escribirnos a corporativo@securitypro.com.co."
-    }, 503);
-  }
-  if (!process.env.OPENAI_MODEL) {
-    return json({
-      error: "Falta configurar OPENAI_MODEL en las variables de entorno de Netlify. Mientras tanto, puedes escribirnos a corporativo@securitypro.com.co."
+      error: "La conexión de IA de Netlify aún no está activa. Inténtalo más tarde o escríbenos a corporativo@securitypro.com.co."
     }, 503);
   }
 
   try {
     const client = new OpenAI();
     const completion = await client.chat.completions.create({
-      model: process.env.OPENAI_MODEL,
+      model: "gpt-6.2-astra",
       messages: [{ role: "system", content: SYSTEM_PROMPT }, ...safeMessages],
       temperature: 0.35,
       max_completion_tokens: 650
