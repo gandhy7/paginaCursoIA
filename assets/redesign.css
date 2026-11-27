@@ -1,0 +1,97 @@
+/* Gandhy Rivera — service directory and operational workspace */
+:root {
+  --security-dark: #121416;
+  --security-deep: #191c1d;
+  --security-light: #f2f2e8;
+  --security-accent: #dbf57b;
+  --security-muted: #bac0b7;
+  --security-line: #3e423d;
+}
+
+body.home { background: var(--security-dark); color: var(--security-light); }
+body.home .site-header { background: var(--security-dark); border-color: var(--security-line); color: var(--security-light); }
+body.home .site-header a { color: var(--security-light); }
+body.home .site-header .brand small { color: #c8cec3; }
+body.home .site-header .brand-mark { background: var(--security-accent); color: var(--security-dark); border-color: transparent; }
+body.home .site-header nav a:last-child { background: transparent; color: var(--security-accent); border: 1px solid #6a7951; }
+body.home .site-header .nav-toggle { background: transparent; color: var(--security-light); border-color: #717969; }
+body.home .site-header nav a[aria-current="page"] { color: var(--security-accent); }
+.site-header .header-inner { min-height: 75px; }
+.redesign-home { background: var(--security-dark); color: var(--security-light); }
+.security-frame { width: min(1280px, calc(100% - clamp(40px, 8vw, 112px))); margin-inline: auto; }
+.security-editorial { position: relative; isolation: isolate; min-height: clamp(540px, 49vw, 730px); display: grid; align-items: center; border-bottom: 1px solid var(--security-line); }
+.security-cover { position: absolute; z-index: -1; inset: 0 0 0 31%; overflow: hidden; }
+.security-cover img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 65% 50%; }
+.security-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #121416 0%, #121416ed 10%, #12141691 30%, #12141600 66%), linear-gradient(0deg, #12141680, transparent 38%); }
+.security-intro { position: relative; width: min(100%, 680px); padding-block: clamp(52px, 9vw, 120px); }
+.security-label { color: var(--security-accent); font: 400 .78rem/1.4 var(--font-mono); letter-spacing: .09em; margin: 0 0 20px; }
+.redesign-home :is(h1, h2, h3) { font-family: var(--font-body); color: inherit; line-height: 1.02; letter-spacing: -.055em; }
+.redesign-home h1 { font-size: clamp(3.1rem, 5.9vw, 6.05rem); font-weight: 700; margin: 0 0 26px; max-width: 11ch; }
+.redesign-home h1 em { color: var(--security-accent); font-style: normal; }
+.security-intro > p:not(.security-label) { font-size: clamp(1rem, 1.45vw, 1.22rem); max-width: 37ch; margin: 0 0 27px; color: #e3e7df; }
+.security-actions { display: flex; flex-wrap: wrap; gap: 13px 21px; align-items: center; }
+.redesign-home :is(.security-cta, .security-text) { display: inline-flex; align-items: center; gap: .75em; min-height: 48px; line-height: 1.3; font-weight: 700; text-decoration: none; }
+.redesign-home .security-cta { padding: 12px 18px; background: var(--security-accent); color: #151910; border-radius: 5px; transition: background .2s ease, transform .2s ease; }
+.redesign-home .security-cta:hover { background: #effdaa; transform: translateY(-2px); }
+.redesign-home .security-text { color: #eef2e6; text-decoration: underline; text-underline-offset: .25em; }
+.redesign-home :is(a, button):focus-visible, body.home .site-header :is(a,button):focus-visible { outline: 3px solid #dbf57b; outline-offset: 4px; }
+.redesign-home .security-cta:focus-visible { outline-color: #f3f8d6; }
+
+.security-topic-area { background: #1a1e1a; padding-block: clamp(48px, 8vw, 112px); border-bottom: 1px solid var(--security-line); }
+.security-topic-layout { display: grid; grid-template-columns: minmax(0,.72fr) minmax(0,1.28fr); gap: clamp(25px, 6vw, 110px); align-items: start; }
+.redesign-home h2 { font-size: clamp(2.3rem, 4.4vw, 4.55rem); margin: 0 0 16px; }
+.security-topic-layout p, .security-workplace-copy > p:not(.security-label) { color: var(--security-muted); line-height: 1.56; margin: 0; max-width: 44ch; }
+.security-directory { border-top: 1px solid #5d6759; }
+.security-directory a { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 20px; padding: clamp(15px, 2.6vw, 30px) 0; border-bottom: 1px solid #5d6759; color: var(--security-light); text-decoration: none; }
+.security-directory a:hover h3 { color: var(--security-accent); }
+.security-directory h3 { font-size: clamp(1.25rem, 2.1vw, 2rem); margin: 0 0 7px; letter-spacing: -.035em; }
+.security-directory a > span { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 100%; border: 1px solid #657056; color: #e5faab; }
+.security-directory a:hover > span { background: var(--security-accent); color: var(--security-dark); }
+
+.security-workplace { padding-block: clamp(48px, 8vw, 105px); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.8fr); align-items: center; gap: clamp(30px, 8vw, 120px); }
+.security-workplace-copy > p:not(.security-label) { margin-bottom: 20px; }
+.security-chain { display: grid; list-style: none; margin: 0; padding: clamp(22px, 3.5vw, 44px); background: var(--security-deep); border: 1px solid var(--security-line); border-radius: 12px; }
+.security-chain li { display: grid; grid-template-columns: 14px minmax(0,1fr); gap: 17px; position: relative; padding: 0 0 25px; }
+.security-chain li:last-child { padding-bottom: 0; }
+.security-chain li:not(:last-child)::before { content: ''; position: absolute; inset: 8px auto 0 6px; width: 1px; background: #5e6a5f; }
+.chain-point { width: 13px; height: 13px; border-radius: 50%; background: var(--security-deep); border: 1px solid #bdc8af; margin-top: 5px; position: relative; }
+.security-chain li:last-child .chain-point { background: var(--security-accent); border-color: var(--security-accent); }
+.security-chain strong { display: block; font-size: 1.1rem; line-height: 1.25; }
+.security-chain p { margin: 3px 0 0; color: var(--security-muted); }
+
+body.inner-page .page-hero {
+  background: #e8eddf;
+  border-left: 5px solid #596f47;
+  border-radius: 10px;
+  padding: clamp(22px, 5vw, 56px);
+  margin-top: clamp(20px, 4vw, 48px);
+}
+body.inner-page .page-hero h1 { font-family: var(--font-body); font-size: clamp(2.2rem, 5vw, 4.55rem); }
+body.inner-page .contact-address { overflow-wrap: anywhere; }
+body.workspace { background: #f0f2ea; }
+body.workspace .workspace-sidebar { background: #e6eadc; border: 1px solid #cbd6c4; border-radius: 12px; }
+body.workspace .workspace-sidebar .workspace-nav-item.is-active { background: #253324; color: #fff; }
+body.workspace .workspace-sidebar .workspace-nav-item.is-active .icon { color: #dff7a3; }
+body.workspace .workspace-title { background: #fff; border: 1px solid #cbd6c4; border-top: 4px solid #617655; padding: clamp(17px, 3.3vw, 32px); border-radius: 12px; margin-bottom: 20px; }
+body.workspace .workspace-title h1 { font-family: var(--font-body); }
+body.workspace .tool-panel, body.inner-page .white-panel { border-color: #cbd6c4; }
+body:not(.home) :is(a, button, input, select, textarea, summary):focus-visible { outline: 3px solid #526e47; outline-offset: 3px; }
+
+@media (max-width: 850px) {
+  .security-editorial { display: flex; flex-direction: column; align-items: stretch; min-height: 0; }
+  .security-editorial .security-frame { order: -1; }
+  .security-intro { padding-block: clamp(33px, 7vw, 70px) 20px; width: 100%; max-width: 660px; }
+  .security-cover { position: relative; z-index: auto; inset: auto; width: 100%; height: clamp(230px, 49vw, 425px); }
+  .security-cover img { object-position: 65% 58%; }
+  .security-cover::after { background: linear-gradient(180deg, #121416 0%, #12141600 30%); }
+  .security-topic-layout, .security-workplace { grid-template-columns: minmax(0,1fr); }
+}
+@media (max-width: 490px) {
+  .security-label { margin-bottom: 12px; }
+  .redesign-home h1 { margin-bottom: 16px; font-size: clamp(2.48rem, 10.4vw, 3.55rem); }
+  .security-intro > p:not(.security-label) { margin-bottom: 16px; }
+  .security-actions { gap: 8px 17px; }
+  .security-cover { height: 230px; }
+  .security-directory a { gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .redesign-home .security-cta { transition: none; } }

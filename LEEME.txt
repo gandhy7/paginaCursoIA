@@ -1,0 +1,69 @@
+GANDHY RIVERA · SEGURIDAD Y OPERACIÓN
+Proyecto personalizado de IBERO · Respuesta del 24 de noviembre de 2026
+
+ARCHIVOS PRINCIPALES
+index.html: presentación orientada a una consulta concreta.
+enfoque.html: método, alcance y conexiones pendientes.
+herramientas.html: oportunidades, tareas, importación y respaldos.
+contacto.html: preparar una consulta para revisar y enviar desde el correo.
+404.html: recuperación de navegación.
+
+PRIMER RECORRIDO
+1. Abre Herramientas. El panel comienza vacío.
+2. Registra una oportunidad: empresa, contacto, correo, área y etapa. Define una próxima fecha y acción.
+3. En Operación, crea una tarea, asigna responsable y fecha; vincúlala a esa oportunidad.
+4. Filtra los registros, edita el siguiente paso y prepara el guion de seguimiento.
+5. Exporta el CSV y una copia JSON completa. En Copias, revisa el JSON y confirma su restauración.
+
+CSV DE OPORTUNIDADES
+La plantilla vacía está en plantilla_oportunidades.csv. Se admiten coma o punto y coma, comillas y campos multilínea. Fechas: AAAA-MM-DD. Hasta 2.000 registros totales entre oportunidades y tareas. Importación CSV hasta 3 MB; JSON hasta 5 MB.
+Cabeceras: empresa, contacto, correo, area, estado, proxima_fecha, proxima_accion, notas.
+Áreas: seguridad, correo, inventario, taller, contabilidad, operaciones.
+Etapas: nueva, contactada, alcance, propuesta, ganada, descartada.
+Empresa obligatoria. El correo puede quedar vacío cuando aún no se conoce; si se informa debe ser válido. Una fila que repite empresa y correo en el CSV o en los registros existentes bloquea toda la importación, para que la revises.
+La revisión no guarda nada. La confirmación añade registros nuevos y vuelve a validar el archivo contra el estado actual. Una oportunidad con tareas asociadas no se elimina hasta resolver esas relaciones.
+
+QUÉ MIDE EL PANEL
+Abiertas: etapas distintas de ganada o descartada. En propuesta: abiertas en esa etapa. Seguimientos vencidos: abiertas cuya próxima fecha es anterior al día del dispositivo. Tareas por terminar: estados distintos de terminada. La ausencia de fecha o acción se señala para revisión.
+Las etapas y la terminación las declara la persona que registra; no son verificaciones externas.
+
+CONEXIONES PENDIENTES
+La respuesta menciona una web existente, pero no aporta su URL ni archivos. Esta entrega es una propuesta independiente; no afirma haber modificado esa web.
+El correo, las bases de datos, inventario, taller, contabilidad y operación no están conectados. Harán falta sistemas concretos, APIs autorizadas, autenticación, permisos y datos compartidos.
+El guion de seguimiento organiza los datos del registro y preguntas fijas; no llama a una IA ni envía correos. La presentación de seguridad no ejecuta pruebas ni certifica sistemas.
+
+PUBLICAR EN NETLIFY
+1. Descomprime el ZIP individual.
+2. Ubica la carpeta que contiene index.html y assets.
+3. En el flujo de publicación manual de Netlify, arrastra esa carpeta completa.
+4. No hace falta npm, instalar paquetes ni ejecutar una compilación.
+5. Comprueba las cuatro páginas y descarga una copia de tus datos de prueba.
+Para publicación desde repositorio: directorio de publicación «.», sin comando de compilación. netlify.toml ya lo indica.
+Referencia oficial: https://docs.netlify.com/deploy/create-deploys/
+
+ABRIR Y PERSONALIZAR
+Puedes abrir index.html para revisar el contenido; la conservación de datos en direcciones file:// depende del navegador. Para el uso continuado utiliza el sitio servido con HTTPS y descarga respaldos. Cambiar la dirección, el navegador o el dispositivo no mueve tus datos.
+Edita los textos en los archivos HTML, la presentación en assets/styles.css y los enlaces opcionales en configuracion.js. No hay claves ni servicios de pago incorporados.
+Si configuracion.js mantiene formulario y agenda vacíos, esos accesos permanecen ocultos. Usa direcciones HTTPS completas cuando tengas un formulario o agenda propios.
+
+CONTACTO
+El formulario prepara un borrador y permite copiarlo o abrirlo en tu correo. Solo se envía cuando tú lo envías desde tu aplicación de correo. La web no almacena ni transmite consultas por su cuenta.
+
+DATOS Y COPIAS
+El almacenamiento pertenece a este navegador y a esta dirección web. No hay inicio de sesión ni separación de usuarios. Un panel local no equivale a un acceso privado.
+Si el almacenamiento no está disponible, la aplicación avisa y permite trabajar en memoria. Descarga una copia antes de cerrar. Una copia inválida no debe sustituir tus registros.
+Conserva respaldos antes de importar, cambiar de equipo o publicar en una dirección nueva. La restauración requiere revisar el archivo y confirmar el reemplazo.
+
+VERIFICACIÓN
+Incluye revisión estática de archivos, rutas y scripts; pruebas de lógica y flujos en DOM instrumentado con Node. No se realizó una revisión visual en navegador en este entorno. El ajuste final al contenido real debe comprobarse en escritorio y móvil antes de lanzar una operación real.
+
+ACTUALIZACIÓN DEL 26 DE NOVIEMBRE
+Los formularios muestran cambios sin guardar. Al cambiar de registro o cancelar una edición pendiente, puedes decidir si descartarla. Las exportaciones indican si solo incluirán el estado guardado. Se conserva el formato de respaldo de la primera entrega; se validan también sus límites de tamaño y contenido.
+La búsqueda reconoce acentos y combina varias palabras. Un error de lectura de un archivo anterior no sustituye el estado de una nueva revisión.
+El contenido guardable se limita para que una copia completa pueda recuperarse dentro del máximo de archivo publicado (5 MB). Una operación que lo supere se rechaza antes de cambiar los registros.
+
+CONCORDANCIA CON TU OBJETIVO DE APRENDIZAJE
+GUIA_PRIMER_AGENTE.txt explica cómo convertir una tarea del panel en una ficha e instrucción de agente, probar cuatro situaciones y especificar la conexión posterior por área. Puedes abrirla desde Enfoque. Es preparación para aprender; no instala un agente ni conecta servicios. La aplicación de pentesting mencionada en tu respuesta sigue pendiente de caso de uso, alcance autorizado y entorno de pruebas.
+
+PRESENTACIÓN Y NAVEGACIÓN ACTUALIZADAS
+Las páginas mantienen el motor y los formatos de datos. assets/premium.css contiene el diseño visual adicional; assets/experience.js añade las interacciones de presentación, los accesos al panel y ayudas de formulario. No cambies los identificadores de campos sin revisar sus scripts.

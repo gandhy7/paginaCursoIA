@@ -1,0 +1,9 @@
+RECURSOS Y REFERENCIAS
+Código, diseño de interfaz y textos: preparados para el proyecto de Gandhy Rivera, IBERO, noviembre de 2026.
+Tipografías locales: Noto Sans Display, Noto Sans y DejaVu Sans Mono. Archivos y licencias originales en assets/fonts/LICENSES.txt.
+assets/editorial.png: ilustración conceptual generada para esta entrega. No representa instalaciones, clientes ni resultados reales. Concepto: estructuras de vidrio ahumado y metal protegiendo un núcleo lima, sobre fondo oscuro; sin marcas ni interfaz ficticia.
+Referencia técnica: OWASP Web Security Testing Guide, https://owasp.org/projects/web-security-testing-guide (consulta 25-11-2026).
+Referencia de despliegue: https://docs.netlify.com/deploy/create-deploys/ (consulta 25-11-2026).
+Los datos de contacto y necesidades proceden exclusivamente de la respuesta suministrada por el usuario.
+
+assets/estructura-protegida.jpg: copia comprimida para la portada, a partir del recurso entregado assets/editorial.png.
